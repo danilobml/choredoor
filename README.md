@@ -1,1 +1,1 @@
-# choredoor
+This is a symple game project.

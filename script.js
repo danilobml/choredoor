@@ -101,5 +101,6 @@ const countStreak = (status) => {
     streakCounter.innerHTML = `Your current streak is: ${streak++}`; 
   } else {
     streakCounter.innerHTML = `Your current streak is: 0`;
+    streak=0;
   }
 }

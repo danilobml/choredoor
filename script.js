@@ -11,6 +11,8 @@ let openDoor3;
 const closedDoorPath = "https://content.codecademy.com/projects/chore-door/images/closed_door.svg";
 const startButton = document.querySelector("#start");
 let currentlyPlaying = true;
+let streak = 0;
+const streakCounter = document.querySelector("#streak");
 
 doorImage1.onclick = () => {
   if (isClicked(doorImage1) && currentlyPlaying === true){
@@ -45,9 +47,10 @@ const startRound = () => {
 }
 const gameOver = (status) => {
   if (status === 'win') {
-    startButton.innerHTML = "You win! Play again?"
+    startButton.innerHTML = "You win! Click to play"
+    currentlyPlaying = false;
   } else {
-    startButton.innerHTML = "Game over! Play again?"
+    startButton.innerHTML = "Game over! Click to play"
     currentlyPlaying = false;
   }
 }
@@ -86,7 +89,17 @@ const playDoor = (door) => {
   numClosedDoors--;
     if (isBot(door) === true && numClosedDoors> 0) {
       gameOver();
+      countStreak();
     } else if (numClosedDoors === 0) {
     gameOver('win');
+    countStreak('win');
   } 
+}
+
+const countStreak = (status) => {
+  if (status === 'win') {
+    streakCounter.innerHTML = `Your current streak is: ${streak++}`; 
+  } else {
+    streakCounter.innerHTML = `Your current streak is: 0`;
+  }
 }

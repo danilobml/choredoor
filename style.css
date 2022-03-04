@@ -48,9 +48,15 @@ body {
   .door-row {
     text-align: center;
   }
-  
+
+  .start-streak {
+    display:flex;
+    justify-content: center;
+
+  }
+
   .start-row {
-    margin: auto;
+    margin: 10px;
     width: 120px;
     height: 43px;
     font-family: ‘Work Sans’;
@@ -61,4 +67,8 @@ body {
     color: #010165;
     margin-bottom: 21px;
     cursor: pointer;
+  }
+
+  #streak {
+    cursor:default;
   }
